@@ -9,7 +9,7 @@ while(<>) {
   $text .= $_;
 }
 
-my @matches = $text =~ /\(PMID:\s?([\d,\s]+?)\)/g;
+my @matches = $text =~ /[\(\[]PMID:\s?([\d,\s]+?)[\)\]]/g;
 my @all_references = split /, ?/, join ", ", @matches;
 my %unique_references;
 
